@@ -12,5 +12,6 @@ export const MESSAGES={
     addSuccess:"Task Added Successfully",
     delSuccess:"Deleted Successfully",
     delError:"Cannot Delete Please try again",
-    delCancel:"Deleting process Cancelled"
+    delCancel:"Deleting process Cancelled",
+    updSuccess:"Task Updated Successfully",
 }

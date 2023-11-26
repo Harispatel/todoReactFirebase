@@ -1,8 +1,9 @@
 import React from "react";
-import { deleteDoc, doc, updateDoc } from "firebase/firestore";
-import { auth, db } from "../services/firebase.config";
 import { Button, Checkbox, Popconfirm, message } from "antd";
 import { RestOutlined, InteractionOutlined } from "@ant-design/icons";
+
+import { deleteDoc, doc, updateDoc } from "firebase/firestore";
+import { auth, db } from "../services/firebase.config";
 import { handleChange,  handleRecycle } from "./ApiHelpers";
 import { DB_NAME, MESSAGES } from "./data";
 
@@ -32,8 +33,12 @@ function TodoView({ fetchData, todos }) {
     console.log(e);
     message.info(MESSAGES.delCancel);
   };
+  const handleTaskUpdate=()=>{
+    fetchData()
+    message.info(MESSAGES.updSuccess);
+  }
   const handlingChange = async (e, data) => {
-    handleChange({ e, data, doc, db, updateDoc, fetchData });
+    handleChange({ e, data, doc, db, updateDoc, handleTaskUpdate });
   };
   return (
     <div className="todo-container">

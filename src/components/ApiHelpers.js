@@ -60,7 +60,7 @@ export const handleChange = async ({
   doc,
   db,
   updateDoc,
-  fetchData,
+  handleTaskUpdate,
 }) => {
   const userRef = doc(db, DB_NAME, data?.id);
   let value =
@@ -69,7 +69,7 @@ export const handleChange = async ({
     isCompleted: value,
   });
   if (data?.id) {
-    fetchData();
+    handleTaskUpdate();
   }
 };
 
